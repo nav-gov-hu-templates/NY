@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:meta="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+        xmlns:tns="https://soap.api.nav.gov.hu/definitions/model/2.0/NY/54.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="https://soap.api.nav.gov.hu/definitions/model/2.0/NY/54.0">
+   <import namespace="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+           schemaLocation="form_xsd_metaschema.xsd"/>
+   <element name="Doc_NY" type="tns:Doc_NY_Type" meta:metaType="DocMetaType">
+      <annotation>
+         <documentation>Nyilatkozat (nemleges)</documentation>
+      </annotation>
+   </element>
+   <complexType name="Doc_NY_Type">
+      <annotation>
+         <documentation>A teljes bizonylat szerkezetet leíró típus</documentation>
+      </annotation>
+      <sequence>
+         <element name="Form_NY"
+                  type="tns:Form_NY_Type"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>NY részbizonylat</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <simpleType name="Enum_NY_0A0001C502A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="Dr.">
+            <annotation>
+               <documentation>Dr.=Doktor</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Dr. Dr.">
+            <annotation>
+               <documentation>Dr. Dr.=Doktor Doktor</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Id.">
+            <annotation>
+               <documentation>Id.=Idősb</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Id. Dr.">
+            <annotation>
+               <documentation>Id. Dr.=Idősb. Doktor</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Ifj.">
+            <annotation>
+               <documentation>Ifj.=Ifjabb</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Ifj. Dr.">
+            <annotation>
+               <documentation>Ifj. Dr.=Ifjabb Doktor</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Özv.">
+            <annotation>
+               <documentation>Özv.=Özvegy</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Özv. Dr.">
+            <annotation>
+               <documentation>Özv. Dr.=Özvegy Doktor</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Prof.">
+            <annotation>
+               <documentation>Prof.=Professzor</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Dr. Pr.">
+            <annotation>
+               <documentation>Dr. Pr.=Doktor Professzor</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="Pr. Dr.">
+            <annotation>
+               <documentation>Pr. Dr.=Professzor Doktor</documentation>
+            </annotation>
+         </enumeration>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_NY_0A0001D0001FA">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="H">
+            <annotation>
+               <documentation>H=havi</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="N">
+            <annotation>
+               <documentation>N=negyedéves</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="E">
+            <annotation>
+               <documentation>E=éves</documentation>
+            </annotation>
+         </enumeration>
+      </restriction>
+   </simpleType>
+   <complexType name="Form_NY_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány NY részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_NY_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Azonosító adatok</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120015"
+                  type="tns:Block_NY_120015_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Nyilatkozat által kiváltott bevallások</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_NY_120001_Type">
+      <annotation>
+         <documentation>Azonosító adatok</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120003"
+                  type="tns:FieldGroup_NY_120003_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Adózó adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120010"
+                  type="tns:FieldGroup_NY_120010_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Ügyintéző adatai</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_NY_120015_Type">
+      <annotation>
+         <documentation>Nyilatkozat által kiváltott bevallások</documentation>
+      </annotation>
+      <all>
+         <element name="Chain_120024"
+                  type="tns:Chain_NY_120024_Type"
+                  minOccurs="0"
+                  meta:metaType="ChainMetaType">
+            <annotation>
+               <documentation>Kiváltott bevallások feltüntetése</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Chain_NY_120024_Type">
+      <annotation>
+         <documentation>Kiváltott bevallások feltüntetése</documentation>
+      </annotation>
+      <sequence>
+         <element name="Chain_elem" minOccurs="0" maxOccurs="15">
+            <annotation>
+               <documentation>Lánc ismétlődő elemei</documentation>
+            </annotation>
+            <complexType>
+               <sequence>
+                  <element name="FieldGroup_120025"
+                           type="tns:FieldGroup_NY_120025_Type"
+                           minOccurs="1"
+                           meta:metaType="FieldGroupMetaType">
+                     <annotation>
+                        <documentation>Kiváltott bevallások feltüntetése</documentation>
+                     </annotation>
+                  </element>
+               </sequence>
+            </complexType>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="FieldGroup_NY_120003_Type">
+      <annotation>
+         <documentation>Adózó adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózó adószáma (adószám)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózó adóazonosító jele (adóazonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C00587A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Őstermelők családi gazdaságának nyilvántartási száma (családi_gazdaság_száma)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="5"/>
+                  <maxLength value="12"/>
+                  <pattern value="OCSG[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C00586A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Őstermelői tevékenység azonosító (tevékenység_azonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="6"/>
+                  <maxLength value="15"/>
+                  <pattern value="NEBIH[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózó neve (adózó_név)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_NY_120010_Type">
+      <annotation>
+         <documentation>Ügyintéző adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C030A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügyintéző neve (ügyintéző_név)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C029A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>telefonszáma (ügyintéző_tel)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_NY_120025_Type">
+      <annotation>
+         <documentation>Kiváltott bevallások feltüntetése</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001D0001AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Nyilatkozat által kiváltott bevallás száma  (a) ([NY]A1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="20"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001D0001FA"
+                  minOccurs="0"
+                  type="tns:Enum_NY_0A0001D0001FA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Nyilatkozat által kiváltott bevallás gyakorisága  (f) ([NY]F1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001D0001BA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Éves bevallástípus bevallási időszak kezdete  (b) ([NY]B1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001D0001CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Éves bevallástípus bevallási időszak vége  (c) ([NY]C1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001D0001DA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Havi, negyedéves bevallástípus bevallási időszak kezdete  (d) ([NY]D1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001D0001EA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Havi, negyedéves bevallástípus bevallási időszak vége  (e) ([NY]E1)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+</schema>
